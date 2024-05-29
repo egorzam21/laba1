@@ -1,0 +1,50 @@
+import math
+
+def f(x):
+    return x * math.exp(x) - x - 1
+
+# Метод дихотомии
+def dihotomia(a, b, epsilon):
+    while (b - a) >= epsilon:
+        c = (a + b) / 2
+        if f(c) == 0.0:
+            break
+        elif f(c) * f(a) < 0:
+            b = c
+        else:
+            a = c
+    return c
+
+# Метод итераций (простых итераций)
+def iteration(x0, epsilon):
+    while True:
+        x1 = x0 - f(x0) / (math.exp(x0) + x0 * math.exp(x0) - 1)
+        if abs(x1 - x0) < epsilon:
+            break
+        x0 = x1
+    return x1
+
+# Метод хорд
+def secant(a, b, epsilon):
+    while abs(b - a) >= epsilon:
+        c = b - (f(b) * (b - a)) / (f(b) - f(a))
+        a = b
+        b = c
+    return c
+
+# Метод Ньютона
+def newton(x0, epsilon):
+    while True:
+        x1 = x0 - f(x0) / (math.exp(x0) + x0 * math.exp(x0) - 1)
+        if abs(x1 - x0) < epsilon:
+            break
+        x0 = x1
+    return x1
+
+a, b = 0.0, 1.0
+epsilon = 1e-6
+
+print("Method of dihotomia:", dihotomia(a, b, epsilon))
+print("Method of Iteration:", iteration(0.5, epsilon))
+print("Method of Secant:", secant(a, b, epsilon))
+print("Method of Newton:", newton(0.5, epsilon))
