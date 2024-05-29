@@ -1,0 +1,31 @@
+#include <iostream>
+#include <complex>
+#include <cmath> 
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+    
+    std::complex<double> Z1(1, 1);
+    std::complex<double> Z2(4, -1);
+    std::complex<double> Z3(-1, -2);
+
+    std::complex<double> sum = Z1 + Z2;
+    std::cout << "Сумма: " << sum << std::endl;
+
+    std::complex<double> diff = Z1 - Z2;
+    std::cout << "Разность: " << diff << std::endl;
+
+    std::complex<double> prod = Z1 * Z2;
+    std::cout << "Произведение: " << prod << std::endl;
+
+    std::complex<double> quot = Z1 / Z2;
+    std::cout << "Частное: " << quot << std::endl;
+  
+    std::complex<double> pow = std::pow(Z3, 4);
+    std::cout << "Z3 в четвертой степени: " << pow << std::endl;
+    
+    std::complex<double> root = std::pow(Z3, 1.0 / 3.0);
+    std::cout << "Корень третьей степени из Z3: " << root << std::endl;
+
+    return 0;
+}
