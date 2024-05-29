@@ -55,7 +55,7 @@ int main() {
     double a = 0.0, b = 1.0;
     double epsilon = 1e-6;
 
-    std::cout << "Method of Bisection: " << dihotomia(a, b, epsilon) << std::endl;
+    std::cout << "Method of Dihotomia: " << dihotomia(a, b, epsilon) << std::endl;
     std::cout << "Method of Iteration: " << iteration(0.5, epsilon) << std::endl;
     std::cout << "Method of Secant: " << secant(a, b, epsilon) << std::endl;
     std::cout << "Method of Newton: " << newton(0.5, epsilon) << std::endl;
