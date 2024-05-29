@@ -1,0 +1,24 @@
+import cmath
+
+Z1 = complex(1, 1)
+Z2 = complex(4, -1)
+Z3 = complex(-1, -2)
+
+sum = Z1 + Z2
+
+diff = Z1 - Z2
+
+prod = Z1 * Z2
+
+div = Z1 / Z2
+
+pow = Z3 ** 4
+
+root = cmath.exp(cmath.log(Z3) / 3)
+
+print(f"Сумма Z1 и Z2: {sum}")
+print(f"Разность Z1 и Z2: {diff}")
+print(f"Произведение Z1 и Z2: {prod}")
+print(f"Частное Z1 и Z2: {div}")
+print(f"Четвертая степень Z3: {pow}")
+print(f"Корень третьей степени Z3: {root}")
